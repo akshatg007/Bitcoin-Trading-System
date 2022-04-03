@@ -1,0 +1,29 @@
+{% extends "clayout.html" %}
+
+
+
+{% block title %}
+    Send Money to Trader
+{% endblock %}
+
+{% block main %}
+
+    <h1>Send Cash to Trader</h1>
+
+	
+    <form action="/sendmoney" method="post">
+        <div class="form-group">
+
+	Choose a Trader<SELECT name="traders">
+	{% for t in traderList %}
+		<OPTION value={{t.trader_id}}>{{t.trader_id}}</option>
+	{% endfor %}
+	</SELECT>
+
+
+            <input autocomplete="off" autofocus class="form-control" name="amount" placeholder="amount" type="number" >            
+        </div>
+        
+        <button class="btn btn-primary" type="submit">Send Money</button>
+    </form>
+{% endblock %}

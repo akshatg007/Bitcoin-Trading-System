@@ -1,0 +1,79 @@
+{% extends "tlayout.html" %}
+
+{% block title %}
+    History
+{% endblock %}
+
+{% block main %}
+
+    <h1>Client Details</h1>
+    
+
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">User Name</th>
+          <th scope="col">First Name</th>
+          <th scope="col">Last Name</th>
+          <th scope="col">Level</th>
+          <th scope="col">Available Cash</th>
+          <th scope="col">Street Name</th>          
+          <th scope="col">City</th>
+          <th scope="col">State</th>
+          <th scope="col">ZIP Code</th>                    
+        </tr>
+      </thead>
+      <tbody>
+
+        <tr>
+          <td>{{ uname[0]["username"] }}</td>
+          <td>{{ uname[0]["first_name"] }}</td>
+          <td>{{ uname[0]["last_name"] }}</td>
+          <td>{{ cname[0]["level"] }}</td>
+          <td>{{ cname[0]["fiat_money"] }}</td>
+          <td>{{ addr[0]["street_name"] }}</td>
+          <td>{{ addr[0]["city"] }}</td>
+          <td>{{ addr[0]["state"] }}</td>
+          <td>{{ addr[0]["zipcode"] }}</td>
+          
+        </tr>
+      </tbody>
+    </table>
+
+    
+          
+    <h1>Transaction Details</h1>
+
+
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Trader ID</th>
+          <th scope="col">BTC</th>
+          <th scope="col">Price</th>
+          <th scope="col">Status</th>
+          <th scope="col">Time</th>
+          
+        </tr>
+      </thead>
+      <tbody>
+          {% for i in trnx %}
+        <tr>
+          <td>{{ i["trader_id"] }}</td>
+          <td>{{ i["coin"] }}</td>
+          <td>{{ i["price"] }}</td>
+          <td>{{ i["status"] }}</td>
+          <td>{{ i["time"] }}</td>
+          
+          {% endfor %}
+        </tr>
+      </tbody>
+    </table>
+
+
+        
+          
+          
+
+
+{% endblock %}

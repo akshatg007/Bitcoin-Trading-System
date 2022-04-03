@@ -1,0 +1,32 @@
+{% extends "clayout.html" %}
+
+
+
+{% block title %}
+    Request Trade
+{% endblock %}
+
+{% block main %}
+
+    <h1>Request Trader to buy BTC</h1>
+	
+    <form action="/asktrade" method="post">
+        <div class="form-group">
+
+	Choose a Trader<SELECT name="traders">
+	{% for t in traderList %}
+		<OPTION value={{t.trader_id}}>{{t.trader_id}}</option>
+	{% endfor %}
+	</SELECT>
+
+            <input autocomplete="off" autofocus class="form-control" name="crypto" placeholder="# of Bitcoins" type="number"  step="0.001" required> 
+
+			                     
+                       
+        </div>
+        
+        <button class="btn btn-primary" type="submit">Request</button>
+    </form>
+              <p> for selling use "-ve" number notation </p>
+    
+{% endblock %}

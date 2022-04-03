@@ -1,0 +1,48 @@
+{% extends "clayout.html" %}
+
+{% block title %}
+    Home
+{% endblock %}
+
+
+{% block main %}
+
+    <h1>Your Portfolio</h1>
+
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Symbol</th>   
+          <th scope="col">Coins</th>
+          <th scope="col">Price</th>
+          <th scope="col">TOTAL</th>
+        </tr>
+      </thead>
+      <tbody>
+          {% set counter = namespace(value=0) %}
+          {% for i in portfolio %}
+          <tr>
+              <td>{{ "BTCUSD" }}</th>
+              <td>{{ i["bitcoins"] }}</td>
+              <td>${{ price }}</td>
+              <td>${{ "%.2f"|format(price * i["bitcoins"]) }}</td>
+              {% set counter.value = counter.value + 1 %}
+          {% endfor %}
+        </tr>
+          <tr>
+            <td>CASH</td>
+            <td></td>
+            <td></td>
+            <td>${{ "%.2f"|format(current_cash) }}</td>
+          </tr>
+          <tr>
+            
+            <td>Overall</td>
+            <td></td>
+            <td></td>
+            <td>${{ "%.2f"|format((current_cash + total)) }}</td>
+          </tr>
+      </tbody>
+    </table>
+
+{% endblock %}

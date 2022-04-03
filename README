@@ -1,0 +1,43 @@
+pip install -r requirements.txt
+flask run
+
+A user can register as
+1) Client 2) Trader 3) Manager
+
+Client Features
+1) See his/her Portfolio
+2) Get BTC quote in real time
+3) Buy Bitcoins (self)
+4) Sell Bitcoins (self)
+5) Load Money to wallet (self)
+6) Add/Update Address
+7) Send Money to Trader
+8) Request trader for transaction (buy/sell)
+9) Aproved transaction History
+10) Failed transaction History
+
+Trader Features
+1) See Client money requests (accept/decline)
+2) See Client trade requests (accept/decline)
+3) See Approved transactions
+4) See Declined transactions (logs)
+5) Search details of a Client
+
+Manager Features
+1) See all Net purchase/sales made by client
+2) Interface with aggregate information for daily, weekly and monthly transactions (custom dates)
+
+Levels
+1) Gold
+2) Silver
+
+Commission Types
+1) fiat commission
+2) crypto commission
+
+API: For getting realtime bitcoin price we are using IEX Cloud API(https://iexcloud.io/docs/api/)
+Tech Stack: Flask, Sqlite3, Python3
+
+P.S: Please find screen shots in the attached zip file
+Note: To avoid SQL Injection we are hashing the user input password while this doesnot completely avoid future SQL injections this is a good starting point for us to improve upon
+

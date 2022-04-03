@@ -1,0 +1,23 @@
+{% extends "clayout.html" %}
+
+{% block title %}
+    Buy
+{% endblock %}
+
+{% block main %}
+
+    <form action="/buy" method="post">
+        <div class="form-group">
+            <input class="form-control" name="coins" placeholder="# of Bitcoins" type="number"  step="0.001" required>
+        </div>
+
+        <div class="form-group">
+            <input class="form-control" name="commission" placeholder="fiat commission" type="radio" value="fiat"><label>fiat commission</label>
+            <input class="form-control" name="commission" placeholder="crypto commission" type="radio" value="crypto"><label>crypto commission</label>
+        </div>
+
+
+        <button class="btn btn-primary" type="submit">Buy</button>
+    </form>
+
+{% endblock %}

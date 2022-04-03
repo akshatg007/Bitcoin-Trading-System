@@ -1,0 +1,25 @@
+{% extends "tlayout.html" %}
+
+
+
+{% block title %}
+    Send Money to Trader
+{% endblock %}
+
+{% block main %}
+
+    <h1>Search Client Details</h1>
+
+	
+    <form action="/search" method="post">
+        <div class="form-group">
+
+	Choose a Client<SELECT name="clients">
+	{% for c in clientList %}
+		<OPTION value={{c.client_id}}>{{c.client_id}}</option>
+	{% endfor %}
+	</SELECT>
+        
+        <button class="btn btn-primary" type="submit">Search</button>
+    </form>
+{% endblock %}

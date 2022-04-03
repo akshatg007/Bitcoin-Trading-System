@@ -1,0 +1,16 @@
+{% extends "clayout.html" %}
+
+{% block title %}
+    Sell
+{% endblock %}
+
+{% block main %}
+
+    <form action="/load" method="post">
+        <div class="form-group">
+            <input class="form-control" name="amount" placeholder="$ USD" type="number"  min="1" required>
+        </div>
+        <button class="btn btn-primary" type="submit">load money</button>
+    </form>
+
+{% endblock %}

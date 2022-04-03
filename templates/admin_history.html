@@ -1,0 +1,55 @@
+{% extends "alayout.html" %}
+
+{% block title %}
+    History
+{% endblock %}
+
+{% block main %}
+
+    <h3>Nett Purchase History</h3>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Client ID</th>
+          <th scope="col">Coins</th>          
+          <th scope="col">Commission</th>
+          
+        </tr>
+      </thead>
+      <tbody>
+          {% for i in Buy %}
+        <tr>
+          <td>{{ i["client_id"] }}</td>         
+          <td>{{ i["SUM(coin)"] }}</td>
+          <td>{{ i["SUM(commission)"] }}</td>
+          
+          {% endfor %}
+        </tr>
+      </tbody>
+    </table>
+
+
+    <h3>Nett Sale History</h3>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Client ID</th>
+          <th scope="col">Coins</th>          
+          <th scope="col">Commission</th>
+          
+        </tr>
+      </thead>
+      <tbody>
+          {% for i in Sell %}
+        <tr>
+          <td>{{ i["client_id"] }}</td>       
+          <td>{{ i["SUM(coin)"] }}</td>
+          <td>{{ i["SUM(commission)"] }}</td>
+          
+          {% endfor %}
+        </tr>
+      </tbody>
+    </table>
+
+
+{% endblock %}

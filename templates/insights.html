@@ -1,0 +1,163 @@
+{% extends "alayout.html" %}
+
+{% block title %}
+    History
+{% endblock %}
+
+{% block main %}
+
+    <h3>Daily Purchase History</h3>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Day No</th>
+          <th scope="col">Month</th>
+          <th scope="col">Year</th>                    
+          <th scope="col">Coins</th>          
+          <th scope="col">Commission</th>
+          
+        </tr>
+      </thead>
+      <tbody>
+          {% for i in dailyBuy %}
+        <tr>
+          <td>{{ i["day"] }}</td> 
+          <td>{{ i["m"] }}</td>                   
+          <td>{{ i["y"] }}</td>                             
+          <td>{{ i["SUM(coin)"] }}</td>
+          <td>{{ i["SUM(commission)"] }}</td>
+          
+          {% endfor %}
+        </tr>
+      </tbody>
+    </table>
+
+
+    <h3>Daily Sale History</h3>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Day No</th>
+          <th scope="col">Month</th>
+          <th scope="col">Year</th>                              
+          <th scope="col">Coins</th>          
+          <th scope="col">Commission</th>
+          
+        </tr>
+      </thead>
+      <tbody>
+          {% for i in dailySell %}
+        <tr>
+          <td>{{ i["day"] }}</td>      
+          <td>{{ i["m"] }}</td>                   
+          <td>{{ i["y"] }}</td>                                        
+          <td>{{ i["SUM(coin)"] }}</td>
+          <td>{{ i["SUM(commission)"] }}</td>
+          
+          {% endfor %}
+        </tr>
+      </tbody>
+    </table>
+
+
+
+
+
+    <h3>Weekly Purchase History</h3>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Week No</th>          
+          <th scope="col">Coins</th>          
+          <th scope="col">Commission</th>
+          
+        </tr>
+      </thead>
+      <tbody>
+          {% for i in weeklyBuy %}
+        <tr>
+          <td>{{ i["week"] }}</td>         
+          <td>{{ i["SUM(coin)"] }}</td>
+          <td>{{ i["SUM(commission)"] }}</td>
+          
+          {% endfor %}
+        </tr>
+      </tbody>
+    </table>
+
+
+    <h3>Weekly Sale History</h3>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Week No</th>
+          <th scope="col">Coins</th>          
+          <th scope="col">Commission</th>
+          
+        </tr>
+      </thead>
+      <tbody>
+          {% for i in weeklySell %}
+        <tr>
+          <td>{{ i["week"] }}</td>       
+          <td>{{ i["SUM(coin)"] }}</td>
+          <td>{{ i["SUM(commission)"] }}</td>
+          
+          {% endfor %}
+        </tr>
+      </tbody>
+    </table>
+
+
+
+    <h3>Monthly Purchase History</h3>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Month No</th>
+          <th scope="col">Year</th>          
+          <th scope="col">Coins</th>          
+          <th scope="col">Commission</th>
+          
+        </tr>
+      </thead>
+      <tbody>
+          {% for i in monthlyBuy %}
+        <tr>
+          <td>{{ i["month"] }}</td>         
+          <td>{{ i["y"] }}</td>                   
+          <td>{{ i["SUM(coin)"] }}</td>
+          <td>{{ i["SUM(commission)"] }}</td>
+          
+          {% endfor %}
+        </tr>
+      </tbody>
+    </table>
+
+
+    <h3>Monthly Sale History</h3>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Month No</th>
+          <th scope="col">Year</th>                    
+          <th scope="col">Coins</th>          
+          <th scope="col">Commission</th>
+          
+        </tr>
+      </thead>
+      <tbody>
+          {% for i in monthlySell %}
+        <tr>
+          <td>{{ i["month"] }}</td>       
+          <td>{{ i["y"] }}</td>                   
+          <td>{{ i["SUM(coin)"] }}</td>
+          <td>{{ i["SUM(commission)"] }}</td>
+          
+          {% endfor %}
+        </tr>
+      </tbody>
+    </table>
+
+
+{% endblock %}

@@ -1,0 +1,60 @@
+{% extends "alayout.html" %}
+
+{% block title %}
+Custom Search
+{% endblock %}
+
+{% block main %}
+
+
+    <form action="/custom" method="post">
+        <div class="form-group">
+
+	<SELECT name="Df">
+	{% for df in dayList %}
+		<OPTION value={{df}}>{{df}}</option>
+	{% endfor %}
+	</SELECT>
+
+	<SELECT name="Mf">
+	{% for mf in monthList %}
+		<OPTION value={{mf}}>{{mf}}</option>
+	{% endfor %}
+	</SELECT>
+
+	<SELECT name="YYf">
+	{% for yf in yearList %}
+		<OPTION value={{yf}}>{{yf}}</option>
+	{% endfor %}
+	</SELECT>
+
+	<br/>
+	
+	<SELECT name="Dt">
+	{% for dt in dayList %}
+		<OPTION value={{dt}}>{{dt}}</option>
+	{% endfor %}
+	</SELECT>
+
+	<SELECT name="Mt">
+	{% for mt in monthList %}
+		<OPTION value={{mt}}>{{mt}}</option>
+	{% endfor %}
+	</SELECT>
+
+	<SELECT name="YYt">
+	{% for yt in yearList %}
+		<OPTION value={{yt}}>{{yt}}</option>
+	{% endfor %}
+	</SELECT>
+			                     
+                       
+        </div>
+        
+        <button class="btn btn-primary" type="submit">Search</button>
+    </form>
+
+
+
+
+{% endblock %}

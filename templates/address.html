@@ -1,0 +1,18 @@
+{% extends "clayout.html" %}
+
+{% block title %}
+    Update Address
+{% endblock %}
+
+{% block main %}
+    <form action="/address" method="post">
+        <div class="form-group">
+            <input autocomplete="off" autofocus class="form-control" name="stadd" placeholder="Street Address" type="text" required minlength="3">
+            <input autocomplete="off" autofocus class="form-control" name="city" placeholder="City" type="text" required minlength="3">
+            <input autocomplete="off" autofocus class="form-control" name="state" placeholder="State" type="text" required minlength="2">
+            <input autocomplete="off" autofocus class="form-control" name="zipcode" placeholder="Zipcode" type="number" required minlength="5">
+        </div>
+        
+        <button class="btn btn-primary" type="submit">Confirm</button>
+    </form>
+{% endblock %}

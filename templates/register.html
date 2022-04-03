@@ -1,0 +1,31 @@
+{% extends "clayout.html" %}
+
+{% block title %}
+    Register
+{% endblock %}
+
+{% block main %}
+    <form action="/register" method="post">
+        <div class="form-group">
+            <input autocomplete="off" autofocus class="form-control" name="username" placeholder="Username" type="text" required minlength="2">
+            <input autocomplete="off" autofocus class="form-control" name="fname" placeholder="First Name" type="text"  >
+            <input autocomplete="off" autofocus class="form-control" name="lname" placeholder="Last Name" type="text"  >
+            <input autocomplete="off" autofocus class="form-control" name="pnumber" placeholder="Phone Number" type="number" >
+            <input autocomplete="off" autofocus class="form-control" name="cnumber" placeholder="Cell Number" type="number" >
+            <input autocomplete="off" autofocus class="form-control" name="email" placeholder="Email" type="text" >            
+        </div>
+        <div class="form-group">
+            <input class="form-control" name="password" placeholder="Password" type="password" required minlength="5">
+        </div>
+        <div class="form-group">
+            <input class="form-control" name="confirmation" placeholder="Retype password" type="password" required minlength="5">
+        </div>
+        <div class="form-group">
+            <input class="form-control" name="role" placeholder="client" type="radio" value="client"><label>client</label>
+            <input class="form-control" name="role" placeholder="trader" type="radio" value="trader"><label>trader</label>
+            <input class="form-control" name="role" placeholder="manager" type="radio" value="manager"><label>manager</label>
+        </div>
+        
+        <button class="btn btn-primary" type="submit">Register</button>
+    </form>
+{% endblock %}

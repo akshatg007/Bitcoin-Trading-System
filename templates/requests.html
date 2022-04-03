@@ -1,0 +1,42 @@
+{% extends "tlayout.html" %}
+
+{% block title %}
+    Home
+{% endblock %}
+
+
+{% block main %}
+
+    <h1>Trade Requests</h1>
+    
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Client ID</th>   
+          <th scope="col">Coins</th>
+          <th scope="col">Accept</th>
+          <th scope="col">Decline</th>
+          
+        </tr>
+      </thead>
+      <tbody>
+        <form action="/reqs" method="post">
+          {% set counter = namespace(value=0) %}
+          {% for i in reqList %}
+          <tr>
+              <td>{{ i["client_id"] }}</td>
+              <td>{{ i["coin"] }}</td>
+              <td><input class="form-control" name="stat_{{counter.value}}" placeholder="accept" type="radio" value="accept"><label>Accept</label> </td>
+              <td><input class="form-control" name="stat_{{counter.value}}" placeholder="decline" type="radio" value="decline"><label>Decline</label> </td>
+              
+              {% set counter.value = counter.value + 1 %}
+          {% endfor %}
+          <button class="btn btn-primary" type="submit">Confirm</button>
+        </form>
+
+        </tr>
+      </tbody>
+      
+    </table>
+	
+{% endblock %}
